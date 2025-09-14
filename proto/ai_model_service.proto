@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "gateway-ms/proto";
+
+service AIModelService {
+  rpc GetPerfilModels(GetPerfilModelsRequest) returns (GetPerfilModelsResponse);
+  rpc CreatePerfilModel(CreateAIModelRequest) returns (GetAIModelsResponse);
+}
+
+// Mensagem para CreateAIModel
+message CreateAIModelRequest {
+  string perfilName = 1;
+  string instructions = 2;
+}
+
+message GetPerfilModelsRequest {
+}
+
+message AIModel {
+  uint32 id = 1;
+  string perfilName = 2;
+  string instructions = 3;
+}
+
+message GetPerfilModelsResponse {
+  repeated AIModel models = 1;
+}
+
+message GetAIModelsResponse {
+  string status = 1; 
+}
+
