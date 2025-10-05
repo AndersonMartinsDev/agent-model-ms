@@ -1,2 +1,4 @@
 .vscode/launch.json
 cmd/api/.env
+.env
+docker-compose.yml

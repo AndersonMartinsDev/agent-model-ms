@@ -102,8 +102,8 @@ func InitalStrucuture() {
 	}
 
 	m, err := migrate.NewWithDatabaseInstance(
-		"file://migrations", // Caminho para suas migrações
-		DB_NAME,             // Nome do banco de dados
+		"file://cmd/api/migrations", // Caminho para suas migrações
+		DB_NAME,                     // Nome do banco de dados
 		driver,
 	)
 
