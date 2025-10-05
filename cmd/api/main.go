@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	configuration.LoadEnv()
+	// configuration.LoadEnv()
 	configuration.LoadLogger()
 	configuration.LoadDatabase()
 
