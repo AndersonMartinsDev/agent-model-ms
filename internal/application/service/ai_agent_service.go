@@ -37,3 +37,17 @@ func (serv AIAgentService) GetAgentAndPerfil(agent_id uint64) (model.AIAgent, er
 func (serv AIAgentService) GetAgentFromPhone(phone string) (uint, error) {
 	return serv.repo.GetAgentFromPhone(phone)
 }
+
+func (serv AIAgentService) GetBehaviorAgentIa() map[int32]string {
+	behavioural := make(map[int32]string)
+	behavioural[int32(model.Formal)] = model.Formal.String()
+	behavioural[int32(model.Informal)] = model.Informal.String()
+	behavioural[int32(model.Profissional)] = model.Profissional.String()
+	behavioural[int32(model.Amigavel)] = model.Amigavel.String()
+	behavioural[int32(model.Educado)] = model.Educado.String()
+	behavioural[int32(model.Conciso)] = model.Conciso.String()
+	behavioural[int32(model.Detalhado)] = model.Detalhado.String()
+	behavioural[int32(model.Divertido)] = model.Divertido.String()
+	behavioural[int32(model.Respeitoso)] = model.Respeitoso.String()
+	return behavioural
+}

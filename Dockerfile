@@ -21,6 +21,6 @@ COPY --from=builder /app/main .
 # A pasta 'migrations' estÃ¡ em /app/migrations no estÃ¡gio 'builder'
 COPY --from=builder /app/cmd/api/migrations ./cmd/api/migrations
 
-EXPOSE 50051
+# EXPOSE 50052
 
 CMD ["./main"]

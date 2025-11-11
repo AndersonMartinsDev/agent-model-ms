@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  agent-model-ms:
+    image: agent-model-ms:latest
+    deploy:
+     mode: replicated
+     replicas: 1
+     placement:
+       constraints:
+         - node.role == manager # Exemplo de restrição de deploy
+    # Configuração de injeção de secrets
+    secrets:
+      - database_user
+      - database_pass
+      
+    environment:
+      APPLICATION_NAME: agent-model-ms
+      DATABASE_NAME: agent_model
+      DATABASE_HOST: lead-docker.duckdns.org
+      DATABASE_PORT: 5432
+      DATABASE_USER: /run/secrets/database_user
+      DATABASE_PASSWORD: /run/secrets/database_pass
+    networks:
+      - internal-judite
+
+networks:
+  internal-judite:
+    driver: overlay     
+    attachable: true
+
+secrets:
+  database_user:
+    external: true 
+  database_pass:
+    external: true
