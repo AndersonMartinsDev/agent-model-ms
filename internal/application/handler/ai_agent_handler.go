@@ -134,3 +134,10 @@ func (h *AIAgentHandler) DeleteAgent(ctx context.Context, req *pb.DeleteAgentReq
 
 	return &pb.DeleteAgentResponse{Status: "success"}, nil
 }
+
+func (h *AIAgentHandler) GetBehaviorAgentIa(ctx context.Context, req *pb.GetBehaviorAgentIaRequest) (*pb.GetBehaviorAgentIaResponse, error) {
+	response := &pb.GetBehaviorAgentIaResponse{
+		Comportamentos: h.service.GetBehaviorAgentIa(),
+	}
+	return response, nil
+}

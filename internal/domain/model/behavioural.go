@@ -1,9 +1,9 @@
 package model
 
-type ComportamentoIA int
+type Behavioural int
 
 const (
-	Formal ComportamentoIA = iota
+	Formal Behavioural = iota
 	Informal
 	Profissional
 	Amigavel
@@ -14,7 +14,7 @@ const (
 	Respeitoso
 )
 
-func (c ComportamentoIA) String() string {
+func (c Behavioural) String() string {
 	nomes := [...]string{
 		"Formal",
 		"Informal",
@@ -25,10 +25,6 @@ func (c ComportamentoIA) String() string {
 		"Detalhado",
 		"Divertido",
 		"Respeitoso",
-	}
-
-	if c < Formal || c > Respeitoso {
-		return "ComportamentoIA Desconhecido"
 	}
 
 	return nomes[c]

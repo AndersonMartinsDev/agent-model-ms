@@ -7,13 +7,10 @@ import (
 )
 
 type RouterCompose struct {
-	WebhookPrMsURL string
 }
 
 func NewRouterCompose() *RouterCompose {
-	return &RouterCompose{
-		WebhookPrMsURL: "localhost:50051",
-	}
+	return &RouterCompose{}
 }
 
 func (manager RouterCompose) HandlerAIAgentConfiguration() *handler.AIAgentHandler {
