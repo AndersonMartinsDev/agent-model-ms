@@ -25,9 +25,8 @@ services:
       - internal-judite
 
 networks:
-  internal-judite:
-    driver: overlay     
-    attachable: true
+  internal-judite:    
+    external: true
 
 secrets:
   database_user:
